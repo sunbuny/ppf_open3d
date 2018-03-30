@@ -1,0 +1,23 @@
+cmake_minimum_required(VERSION 2.8)
+project(ppf_open3d)
+
+if (NOT CMAKE_VERSION VERSION_LESS "3.0")
+    cmake_policy(SET CMP0054 OLD)
+endif()
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
+
+# 设定可执行二进制文件的目录
+SET( EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+
+# 设定存放编译出来的库文件目录
+SET( LIBRARY_OUTPUT_PATH  ${PROJECT_SOURCE_DIR}/lib)
+
+# 将库文件目录设置为链接目录
+LINK_DIRECTORIES( ${PROJECT_SOURCE_DIR}/lib)
+
+INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/include)
+
+ADD_SUBDIRECTORY(${PROJECT_SOURCE_DIR}/src)
+
